@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 # Diary
 Mini Project made by React &amp; Node.js
-=======
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
