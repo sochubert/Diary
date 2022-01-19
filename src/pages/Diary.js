@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect } from "react/cjs/react.development";
+import { useEffect } from "react";
 import { DiaryStateContext } from "../App";
 import MyButton from "../components/MyButton";
 import MyHeader from "../components/MyHeader";
@@ -12,6 +12,11 @@ const Diary = () => {
     const navigate = useNavigate();
     const diaryList = useContext(DiaryStateContext);
     const [data, setData] = useState();
+
+    useEffect(() => {
+        const titleElement = document.getElementsByTagName('title')[0];
+        titleElement.innerHTML = `감정 일기장 - ${id}번 일기`;
+    }, []);
 
     useEffect(() => {
         if(diaryList.length >= 1) {

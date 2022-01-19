@@ -1,6 +1,6 @@
 import { useCallback, useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import { DiaryDispatchContext } from "../App";
 import EmotionItem from "./EmotionItem";
 import { getStringDate } from "../util/date";

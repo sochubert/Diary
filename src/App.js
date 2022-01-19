@@ -7,7 +7,7 @@ import Edit from './pages/Edit';
 import Diary from './pages/Diary';
 import React from 'react';
 import {useReducer, useRef} from 'react';
-import { useEffect } from 'react/cjs/react.development';
+import { useEffect } from 'react';
 
 const reducer = (state, action) => {
     let newState = [];
@@ -48,7 +48,9 @@ function App() {
         const localData = localStorage.getItem('diary');
         if(localData) {
             const diaryList = JSON.parse(localData).sort((a, b) => parseInt(b.id) - parseInt(a.id));
-            dataId.current = parseInt(diaryList[0].id) + 1;
+            if (diaryList.length >= 1) {
+                dataId.current = parseInt(diaryList[0].id) + 1;
+            }
             dispatch({type: "INIT", data: diaryList});
         }
     }, []);
